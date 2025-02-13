@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - BrodIT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="slike/simbol.png">
+    <script src="/JavaScript/scripts.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Biblioteka za kontakt ikone -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"> <!-- CSS za Leaflet kartu -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> <!-- Skripta za Leaflet kartu -->
+</head>
+<body>
+    <div class="linija"></div>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="slike/logo.png" alt="Logo">
+            </a>
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="index.html">Naslovna</a></li>
+                <li><a href="o-nama.html">O nama</a></li>
+                <li><a href="usluge.html">Usluge</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobile-menu">
+                &#9776; <!-- Hamburger ikona -->
+            </div>
+        </nav>
+    </header>
+
+    <div class="linija"></div>
+
+    <main>
+
+        <section id="kontaktirajte-nas">
+            <div class="o-nama-sadrzaj">
+                <div class="o-nama-tekst">
+                    <h1 class="o-nama-naslov">Kontaktirajte nas!</h1>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i> 
+                        Ul. 108. brigade ZNG 36, 35000, Slavonski Brod, Hrvatska
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                        
+                        <a href="mailto:info@brodit.hr">info@brodit.hr</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+385 35 123 456">+385 35 123 456</a>
+                    </p>    
+                </div>
+                <img src="slike/podrska-teta.png" alt="Teta customer support" class="podrska-teta-slika">
+            </div>
+        </section>
+
+        <section id="karta-sekcija">
+            <div id="karta"></div>
+        </section>
+
+        <script>
+            // Inicijalizacija karte
+            var map = L.map('karta').setView([45.165388, 18.011648], 15);
+    
+            //  OpenStreetMap sloj
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+    
+            // Marker na karti
+            L.marker([45.165388, 18.011648]).addTo(map)
+                .bindPopup('BrodIT<br>Ul. 108. brigade ZNG 36,<br> 35000, Slavonski Brod,<br> Hrvatska')
+                .openPopup();
+        </script>
+
+        <div class="linija"></div>
+        
+        <section id="javite-nam-se">
+                    <h1 class="javite-nam-se-naslov">Javite nam se!</h1>
+                    <form id="obrazac">
+                        <label for="ime">Ime:</label>
+                        <input type="text" id="ime" name="ime" required><br>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required><br>
+                        <label for="poruka">Poruka:</label>
+                        <textarea id="poruka" name="poruka" required></textarea>
+                        <button type="posalji">Pošalji</button>
+                    </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="linija"></div>
+        <p>&copy; 2025 BrodIT</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100063699367611" target="_blank">
+              <img src="slike/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.instagram.com/sveucilisteuslavonskombrodu/" target="_blank">
+              <img src="slike/instagram.png" alt="Instagram" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/channel/UCzlcLvAkTQUSmB9LUMenGGg"  target="_blank">
+              <img src="slike/youtube.png" alt="YouTube" class="social-icon">
+            </a>
+          </div>
+        <div class="linija"></div>
+    </footer>
+</body>
+</html>
