@@ -1,0 +1,611 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('/slike/pozadina.png');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    background-color: rgba(255, 255, 255, 0.9); /*Bijela pozadina sa prozirnošću */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color:navy;
+    padding: 1rem;
+}
+
+.logo img{
+    width: 20vw;
+    max-width: 100%;
+    height: auto;
+}
+
+.linija{
+    width: 100%;
+    height: 5px;
+    background-color: navy;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px; /* Razmak između stavki izbornika */
+    justify-content: flex-end; /* Horizontalno poravnanje stavki izbornika */
+    padding-right: 20px; /* Dodaje padding s desne strane */
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none; /* Uklanja podcrtavanje */
+    color: navy; /* Postavlja boju teksta */
+    font-size: 1.4rem;
+
+}
+
+.mobile-menu {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 30%;
+        background-color: white; /* Dodaje pozadinsku boju */
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        right: 0;
+        padding: 10px 20px;
+        margin: 0;
+        z-index: 1000; /* Osigurava da je izbornik iznad drugih elemenata */
+        box-shadow: 0 4px 8px black; /* Dodaje sjenu ispod izbornika */
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.glavna{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.tekst-iznad-videa{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.nasl1 {
+    margin: 0;
+    padding: 0;
+    font-size: 3vw; /* Veličina teksta proporcionalna širini prikaznog prozora */
+    text-shadow: 2px 2px 4px black;
+}
+
+.usluge {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.usluga {
+    flex: 1 1 calc(25% - 20px); /* Osigurava da najviše 4 slike idu u jedan red */
+    max-width: calc(25% - 20px); /* Osigurava da najviše 4 slike idu u jedan red */
+    min-width: 200px; /* Minimalna širina slike */
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+
+.usluga-img {
+    box-shadow: 0 4px 8px grey; /* Dodaje sjenu iza slike */
+    transition: box-shadow 0.3s ease-in-out; /* Dodaje tranziciju za glatkoću */
+    border-radius: 5%; /* Zaobljuje rubove slike */
+}
+
+.usluga-img:hover {
+    box-shadow: 0 8px 16px darkgrey; /* Povećava sjenu pri hoveru */
+}
+
+/* Media query za manje ekrane */
+@media (max-width: 1530px) {
+    .usluga {
+        flex: 1 1 calc(33.33% - 20px); /* 3 slike u jednom redu */
+        max-width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 1150px) {
+    .usluga {
+        flex: 1 1 calc(50% - 20px); /* 2 slike u jednom redu */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 770px) {
+    .usluga {
+        flex: 1 1 100%; /* 1 slika u jednom redu */
+        max-width: 100%;
+    }
+}
+
+footer {
+    background-color: white;
+    color: navy;
+    text-align: center;
+    width: 100%;
+}
+
+.social-icon{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+footer .social-icons a {
+    text-decoration: none; /* Uklanja podcrtavanje */
+}
+
+.center-text {
+    text-align: center;
+    color: royalblue;
+    text-shadow: 1px 1px 1px darkgrey;
+    font-size: 2rem;
+}
+
+.text-box {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: royalblue;
+    padding: 20px;
+    box-shadow: 0 4px 8px black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center; /* Horizontalno centriranje */
+    align-items: center; /* Vertikalno centriranje */
+    
+}
+
+.text-page {
+    display: none;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px black;
+    text-align: center; /* Centriranje teksta unutar text-page */
+}
+
+.text-page.active {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: navy;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+}
+
+.prev {
+    left: 20px;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 20px;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: darkgrey;
+    color: white;
+}
+
+/* USLUGE */
+
+.usluge-lista {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.usluga-usluga {
+    display: flex; /*tip boxa za sliku pored teksta */
+    flex-direction: row; /*  podnaslov, paragraf i btn u redove */
+    align-items: center; /* Centrira sliku i tekst */
+    flex: 1 1 calc(40% - 20px); /* Osigurava da najviše 2 boxa idu u jedan red */
+    max-width: calc(50% - 20px); /* svaki box zauzima najviše pola stranice po širini kad su 2 u redu */
+    min-width: 200px; /* Minimalna širina boxa */
+    box-sizing: border-box; /* ponašanje širine i visine boxa */
+    padding: 20px;
+    margin: 10px;
+    text-align: left;
+    background-color: azure; /* Bijela pozadina s prozirnošću */
+    border-radius: 10px; /* Zaobljeni rubovi */
+    box-shadow: 0 4px 8px grey; /* Dodaje sjenu iza boxa */
+}
+
+.usluga-usluga-img {
+    width: 250px; /* Širina slike */
+    height: auto;
+    margin-right: 20px; /* Razmak između slike i teksta */
+}
+
+.usluga-usluga p {
+    font-size: 1rem;
+    color: navy;
+}
+
+.usluga-usluga h3{
+    margin: 10px 0;
+    font-size: 1.5rem;
+    color: royalblue;
+}
+
+.usluga-oblik-boxa {
+    display: flex;
+    flex-direction: column; /* Postavlja naslov, paragraf i gumb u stupac */
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: royalblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 90px;
+}
+
+.btn:hover {
+    background-color: darkblue;
+}
+
+/* Media query za manje ekrane */
+@media (max-width: 1050px) {
+    .usluga-usluga {
+        flex-direction: column; /* Slika, podnaslov, paragraf i btn prebacuje u stupac na manjim ekranima */
+        align-items: center;
+        text-align: center; /* Centriranje teksta */
+    }
+
+    .usluga-usluga-img {
+        margin-right: 0; /* Uklanja razmak između slike i teksta */
+        margin-bottom: 10px; /* Dodaje razmak ispod slike */
+    }
+}
+@media (max-width: 650px) {
+    .usluga-usluga {
+        flex: 1 1 100%; /* 1 box u jednom redu */
+        max-width: 100%;
+    }
+}
+
+
+/* O NAMA */
+
+#o-nama-opis {
+    display: flex;
+    flex-direction: column; /* Postavlja elemente sectiona u stupac */
+    align-items: center; /* Vertikalno centriranje elemenata */
+    justify-content: center; /* Razmak između elemenata */
+    padding: 100px;
+}
+
+.o-nama-naslov {
+    font-size: 3rem;
+    color: royalblue;
+}
+
+.o-nama-sadrzaj {
+    display: flex;
+    flex-direction: row; /* Postavlja tekst i sliku u red */
+    align-items: center; /* Vertikalno centriranje elemenata */
+}
+
+.o-nama-tekst {
+    flex: 1; /* Omogućava tekstu da zauzme preostali prostor */
+    margin-right: 100px;
+    font-size: 1.2rem;
+    color: navy;
+}
+
+.o-nama-kolege {
+    width: 300px; /* Širina slike */
+    height: auto;
+    margin-right: 50px;
+    border-radius: 50px; /* Zaobljeni rubovi slike */
+}
+
+#o-nama-partneri {
+    display: flex;
+    flex-direction: column; /* Postavlja elemente sectiona u stupac */
+    align-items: center; /* Vertikalno centriranje elemenata */
+    justify-content: center; /* Razmak između elemenata */
+    margin-left: 100px;
+}
+
+.o-nama-sadrzaj-partneri {
+    display: flex;
+    flex-direction: column; /* Postavlja tekst i sliku u red */
+    align-items: center; /* Vertikalno centriranje elemenata */
+}
+
+.o-nama-partneri-slika{
+    width: 1500px; /* Širina slike */
+    height: auto;
+    align-items: center; /* Vertikalno centriranje elemenata */
+}
+
+/* Media query za manje ekrane */
+@media (max-width: 1000px) {
+    #o-nama-opis {
+        flex-direction: column; /* Postavlja elemente u stupac na manjim ekranima */
+        text-align: center; /* Centriranje teksta */
+    }
+
+    .o-nama-sadrzaj {
+        flex-direction: column; /* Postavlja tekst i sliku u stupac na manjim ekranima */
+        align-items: center;
+    }
+
+    .o-nama-tekst {
+        margin-right: 0; /* Uklanja razmak između teksta i slike */
+        margin-bottom: 20px; /* Dodaje razmak ispod teksta */
+    }
+
+    .o-nama-kolege {
+        width: 100%; /* Širina slike prilagođena širini ekrana */
+        max-width: 300px; /* Maksimalna širina slike */
+        margin-right: 0; /* Uklanja desni margin */
+    }
+}
+
+@media (max-width: 1400px) {
+    #o-nama-partneri {
+        flex-direction: column; /* Postavlja elemente u stupac na manjim ekranima */
+        text-align: center; /* Centriranje teksta */
+        margin-left: 0;
+    }
+
+    .o-nama-sadrzaj-partneri {
+        flex-direction: column; /* Postavlja tekst i sliku u stupac na manjim ekranima */
+        max-width: 600px; /* Maksimalna širina paragrafa */
+        padding: 0 20px; /* Dodaje padding s lijeve i desne strane */
+    }
+
+    .o-nama-partneri-slika {
+        width: 100%; /* Širina slike prilagođena širini ekrana */
+    }
+}
+
+/* KONTAKT */
+
+
+#kontaktirajte-nas {
+    display: flex;
+    flex-direction: column; /* Postavlja elemente sectiona u stupac */
+    align-items: center; /* Vertikalno centriranje elemenata */
+    justify-content: center; /* Razmak između elemenata */
+    padding: 100px;
+}
+
+.podrska-teta-slika{
+    width: 400px; /* Širina slike */
+    height: auto;
+    align-items: center; /* Vertikalno centriranje elemenata */
+    border-radius: 50px;
+}
+
+#karta-sekcija{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    margin-bottom: 50px;
+}
+
+#karta{
+    width: 60%;
+    height: 100%;
+    border: 5px solid royalblue;
+}
+
+#javite-nam-se{
+    display: flex;
+    flex-direction: column; /* Postavlja elemente sectiona u stupac */
+    align-items: center; /* Vertikalno centriranje elemenata */
+    justify-content: center; /* Razmak između elemenata */
+    padding: 50px;
+}
+
+.javite-nam-se-naslov {
+    font-size: 3rem;
+    color: royalblue;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#obrazac {
+    display: flex;
+    flex-direction: column; /* Postavlja elemente forme u stupac */
+    align-items: center; /* Vertikalno centriranje elemenata */
+    justify-content: center; /* Razmak između elemenata */
+    width: 100%;
+    margin-top: 50px;
+    color: navy;
+}
+
+#obrazac label {
+    font-size: 1.4rem; /* Promjena veličine fonta za labele */
+    margin-bottom: 5px; /* Dodavanje razmaka ispod labela */
+}
+
+#obrazac input,
+#obrazac textarea {
+    width: 20%; /* Širina input i textarea elemenata */
+    padding: 10px; /* Dodavanje paddinga unutar input i textarea elemenata */
+    margin-bottom: 20px; /* Dodavanje razmaka ispod input i textarea elemenata */
+    border: 1px solid navy; /* Dodavanje obruba */
+    border-radius: 5px; /* Zaobljeni rubovi */
+}
+
+#obrazac button {
+    padding: 10px 20px; /* Dodavanje paddinga unutar gumba */
+    background-color: royalblue; /* Boja pozadine gumba */
+    color: white; /* Boja teksta gumba */
+    border: none; /* Uklanjanje obruba */
+    border-radius: 5px; /* Zaobljeni rubovi */
+    cursor: pointer; /* Promjena kursora na pointer */
+    box-shadow: grey 0 4px 8px; /* Dodavanje sjene ispod gumba */
+}
+
+#obrazac button:hover {
+    background-color: darkblue; /* Promjena boje pozadine gumba pri hoveru */
+}
+
+/* KARTICE ZA USLUGE */
+
+.center-text-usluga {
+    text-align: center;
+    color: royalblue;
+    text-shadow: 1px 1px 1px darkgrey;
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+.usluge-lista-posebno {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.opis-usluge {
+    display: flex; /*tip boxa za sliku pored teksta */
+    flex-direction: row-reverse; /*  podnaslov, paragraf i btn u redove */
+    align-items: flex-start; /* Centrira sliku i tekst */
+    max-width: calc(90% - 20px); /* svaki box zauzima najviše pola stranice po širini kad su 2 u redu */
+    min-width: 200px; /* Minimalna širina boxa */
+    box-sizing: border-box; /* ponašanje širine i visine boxa */
+    padding: 20px;
+    margin: 0 auto;
+    text-align: left;
+    color: royalblue;
+    font-size: 1.4rem;
+}
+
+.slika-usluge{
+    width: 300px; /* Širina slike */
+    height: auto;
+}
+
+.razmak-paragrafa{
+    margin-bottom: 70px;
+}
+
+.btn-sidra{
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: royalblue;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: auto;
+}
+
+.btn-sidra:hover {
+    background-color: darkblue;
+}
+
+.sidro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.sidro-opis {
+    display: flex;
+    flex-direction: column; /*  podnaslov i paragraf u redove */
+    min-width: 200px; /* Minimalna širina boxa */
+    box-sizing: border-box; /* ponašanje širine i visine boxa */
+    padding: 30px;
+    margin: 20px;
+    max-width: 80%;
+    text-align: left;
+    background-color: royalblue; 
+    color: white;
+    font-style: bold;
+    font-size: 1.2rem;
+    border-radius: 50px; /* Zaobljeni rubovi */
+    box-shadow: 0 4px 8px grey; /* Dodaje sjenu iza boxa */
+}
+
+.tablica td {
+    position: relative;
+    padding-left: 15px; /* Razmak za natuknicu */
+    width: 50%; /* Širina ćelije */
+}
+
+.tablica td::before {
+    content: "•"; /* Natuknica u obliku točke */
+    position: absolute;
+    left: 0; /* Poravnanje natuknice s lijeve strane */
+    color: white; /* Boja natuknice */
+    font-size: 1.3rem; /* Veličina natuknice */
+    line-height: 1; /* Visina linije */
+}
+
+/* Media query za manje ekrane */
+@media (max-width: 1000px) {
+    .opis-usluge {
+        flex-direction: column; /* Postavlja elemente u stupac na manjim ekranima */
+        text-align: center; /* Centriranje teksta */
+    }
+    .slika-usluge{
+        max-width: 300px; /* Maksimalna širina slike */
+        margin: 0 auto;
+        display: block;
+    }
+}
