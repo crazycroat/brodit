@@ -444,6 +444,31 @@ footer .social-icons a {
 }
 
 /* Media query za manje ekrane */
+
+@media (max-width: 1400px) {
+    #o-nama-partneri {
+        flex-direction: column; /* Postavlja elemente u stupac na manjim ekranima */
+        text-align: center; /* Centriranje teksta */
+        margin-left: 0;
+    }
+    
+    .o-nama-sadrzaj-partneri {
+        flex-direction: column; /* Postavlja tekst i sliku u stupac na manjim ekranima */
+        max-width: 600px; /* Maksimalna širina paragrafa */
+        padding: 0 20px; /* Dodaje padding s lijeve i desne strane */
+    }
+
+    .o-nama-partneri-slika {
+        width: 100%; /* Širina slike prilagođena širini ekrana */
+    }
+
+    .o-nama-sadrzaj {
+        flex-direction: column; /* Postavlja tekst i sliku u stupac na manjim ekranima */
+        max-width: 600px; /* Maksimalna širina paragrafa */
+        padding: 0 20px; /* Dodaje padding s lijeve i desne strane */
+    }
+}
+
 @media (max-width: 1000px) {
     #o-nama-opis {
         flex-direction: column; /* Postavlja elemente u stupac na manjim ekranima */
@@ -452,7 +477,9 @@ footer .social-icons a {
 
     .o-nama-sadrzaj {
         flex-direction: column; /* Postavlja tekst i sliku u stupac na manjim ekranima */
-        align-items: center;
+        align-items: center; /* Centriranje elemenata */
+        text-align: center; /* Centriranje teksta */
+        padding: 20px; /* Dodaje padding za manje ekrane */
     }
 
     .o-nama-tekst {
@@ -469,35 +496,33 @@ footer .social-icons a {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .o-nama-tekst {
         font-size: 1.2rem; /* Prilagođava veličinu fonta za još manje ekrane */
     }
+
+    .o-nama-sadrzaj {
+        padding: 10px; /* Smanjuje padding za još manje ekrane */
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
+
+    .o-nama-naslov{
+        font-size: 2rem;
+    }
+
     .o-nama-tekst {
-        font-size: 1rem; /* Prilagođava veličinu fonta za najmanje ekrane */
-    }
-}
-
-@media (max-width: 1400px) {
-    #o-nama-partneri {
-        flex-direction: column; /* Postavlja elemente u stupac na manjim ekranima */
+        font-size: 1rem; /* Zadržava veličinu fonta kao na većim ekranima */
+        padding: 0;
         text-align: center; /* Centriranje teksta */
-        margin-left: 0;
     }
 
-    .o-nama-sadrzaj-partneri {
-        flex-direction: column; /* Postavlja tekst i sliku u stupac na manjim ekranima */
-        max-width: 600px; /* Maksimalna širina paragrafa */
-        padding: 0 20px; /* Dodaje padding s lijeve i desne strane */
-    }
-
-    .o-nama-partneri-slika {
-        width: 100%; /* Širina slike prilagođena širini ekrana */
+    .o-nama-sadrzaj {
+        padding: 0px; /* Smanjuje padding za najmanje ekrane */
     }
 }
+
 
 /* KONTAKT */
 
