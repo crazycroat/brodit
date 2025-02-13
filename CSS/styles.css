@@ -135,6 +135,10 @@ nav ul li a {
         flex: 1 1 calc(33.33% - 20px); /* 3 slike u jednom redu */
         max-width: calc(33.33% - 20px);
     }
+    .usluga-img {
+        width: 100%; /* Širina slike prilagođena širini roditeljskog elementa */
+        max-width: 300px; /* Maksimalna širina slike */
+    }
 }
 
 @media (max-width: 1150px) {
@@ -142,12 +146,20 @@ nav ul li a {
         flex: 1 1 calc(50% - 20px); /* 2 slike u jednom redu */
         max-width: calc(50% - 20px);
     }
+    .usluga-img {
+        width: 100%; /* Širina slike prilagođena širini roditeljskog elementa */
+        max-width: 600px; /* Maksimalna širina slike */
+    }
 }
 
 @media (max-width: 770px) {
     .usluga {
         flex: 1 1 100%; /* 1 slika u jednom redu */
         max-width: 100%;
+    }
+    .usluga-img {
+        width: 100%; /* Širina slike prilagođena širini roditeljskog elementa */
+        max-width: 400px; /* Maksimalna širina slike */
     }
 }
 
