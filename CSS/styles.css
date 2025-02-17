@@ -1,15 +1,15 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* font */
     margin: 0;
     padding: 0;
-    background-image: url('../slike/pozadina.png');
+    background-image: url('../slike/pozadina.png'); /* pozadinska slika */
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
-    background-color: rgba(255, 255, 255, 0.9); /*Bijela pozadina sa prozirnošću */
+    background-color: rgba(255, 255, 255, 0.9); /* prozirnija slika */
 }
 
-header {
+header { /* uređenje zaglavlja */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,17 +18,17 @@ header {
     padding: 1rem;
 }
 
-.logo img{
+.logo img{ /* Uređenje loga */
     width: 200px;
 }
 
-.linija{
+.linija{  /* razdvojna linija između nekih sekcija */
     width: 100%;
     height: 5px;
     background-color: navy;
 }
 
-nav ul {
+nav ul {  /* Izbornik */
     list-style-type: none;
     display: flex;
     gap: 20px; /* Razmak između stavki izbornika */
@@ -41,13 +41,13 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none; /* Uklanja podcrtavanje */
-    color: navy; /* Postavlja boju teksta */
+    text-decoration: none; /* uklonjen underline na hipervezama */
+    color: navy;
     font-size: 1.4rem;
 
 }
 
-.mobile-menu {
+.mobile-menu { /* ponašanje padajućeg izbornika */
     display: none;
     font-size: 2rem;
     cursor: pointer;
@@ -59,7 +59,7 @@ nav ul li a {
     height: auto;
 }
 
-.tekst-iznad-videa{
+.tekst-iznad-videa{ /* pozicija teksta za slogan */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -68,14 +68,14 @@ nav ul li a {
     color: white;
 }
 
-.nasl1 {
+.nasl1 {  /* izgled teksta slogana */
     margin: 0;
     padding: 0;
-    font-size: 3vw; /* Veličina teksta proporcionalna širini prikaznog prozora */
+    font-size: 3vw; /* veličina teksta proporcionalna širini prikaznog prozora */
     text-shadow: 2px 2px 4px black;
 }
 
-.usluge {
+.usluge {  /* sekcija za slike sa uslugama */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -83,7 +83,7 @@ nav ul li a {
     margin-top: 20px;
 }
 
-.usluga {
+.usluga {  /* pozicioniranje i veličina svake slike za usluge */
     flex: 1 1 calc(25% - 20px); /* Osigurava da najviše 4 slike idu u jedan red */
     max-width: calc(25% - 20px); /* Osigurava da najviše 4 slike idu u jedan red */
     min-width: 200px; /* Minimalna širina slike */
@@ -93,42 +93,42 @@ nav ul li a {
     text-align: center;
 }
 
-.usluga-img {
-    box-shadow: 0 4px 8px grey; /* Dodaje sjenu iza slike */
-    transition: box-shadow 0.3s ease-in-out; /* Dodaje tranziciju za glatkoću */
-    border-radius: 5%; /* Zaobljuje rubove slike */
+.usluga-img {  /* uređivanje slike za svaku uslugu */
+    box-shadow: 0 4px 8px grey; /* sjena iza slike */
+    transition: box-shadow 0.3s ease-in-out; /* glatko pojavljivanje sjene kad se pređe mišem */
+    border-radius: 5%;
     width: 375px; 
 }
 
 .usluga-img:hover {
-    box-shadow: 0 8px 16px darkgrey; /* Povećava sjenu pri hoveru */
+    box-shadow: 0 8px 16px darkgrey; /* sjena kad se pređe mišem */
 }
 
-footer {
+footer {  /* uređenje podnožja */
     background-color: white;
     color: navy;
     text-align: center;
     width: 100%;
 }
 
-.social-icon{
+.social-icon{ /* ikone za društvene mreže */
     width: 25px;
     height: 25px;
     margin-bottom: 10px;
 }
 
 footer .social-icons a {
-    text-decoration: none; /* Uklanja podcrtavanje */
+    text-decoration: none; /* maknut underline ispod slika sdruštvenih mreža */
 }
 
-.center-text {
+.center-text { /* centriran tekst naslova sekcija */
     text-align: center;
     color: royalblue;
     text-shadow: 1px 1px 1px darkgrey;
     font-size: 2rem;
 }
 
-.recenzije-korisnika {
+.recenzije-korisnika { /* uređenje plavog okvira kod recenzija korisnika */
     position: relative;
     width: 50%;
     margin: 0 auto;
@@ -138,26 +138,26 @@ footer .social-icons a {
     box-shadow: 0 4px 8px black;
     border-radius: 10px;
     display: flex;
-    justify-content: center; /* Horizontalno centriranje */
-    align-items: center; /* Vertikalno centriranje */
+    justify-content: center; /* horizontalno centriranje */
+    align-items: center; /* vertikalno centriranje */
     
 }
 
-.text-page {
+.text-page {  /* uređenje bijelog boxa kod recenzija */
     display: none;
     padding: 40px;
     width: 80%;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 8px black;
-    text-align: center; /* Centriranje teksta unutar text-page */
+    text-align: center;
 }
 
 .text-page.active {
     display: block;
 }
 
-.prev, .next {
+.prev, .next { /* uređenje strelica za listanje recenzija */
     cursor: pointer;
     position: absolute;
     top: 50%;
@@ -171,36 +171,34 @@ footer .social-icons a {
     user-select: none;
 }
 
-.prev {
+.prev { /* pozicija lijeve strelice */
     right: 94%;
     color: white;
 }
 
-.next {
+.next { /* pozicija desne strelice */
     left: 94%;
     color: white;
 }
 
-.prev:hover, .next:hover {
-    background-color: grey /* Promjena boje pozadine pri hoveru */;
+.prev:hover, .next:hover { /* promjena strelice kad se pređe mišem */
+    background-color: grey;
     color: white;
 }
 
-/* Media query */
-
-@media (max-width: 768px) {
+@media (max-width: 768px) {  /* media query za manje zaslone za padajući izbornik */
     nav ul {
         display: none;
         flex-direction: column;
         width: 30%;
-        background-color: white; /* Dodaje pozadinsku boju */
+        background-color: white;
         position: absolute;
-        top: 60px; /* Adjust based on header height */
+        top: 60px;
         right: 0;
         padding: 10px 20px;
         margin: 0;
-        z-index: 1000; /* Osigurava da je izbornik iznad drugih elemenata */
-        box-shadow: 0 4px 8px black; /* Dodaje sjenu ispod izbornika */
+        z-index: 1000;  /* izbornik iznad drugih elemenata */
+        box-shadow: 0 4px 8px black;
     }
 
     nav ul.active {
@@ -212,14 +210,14 @@ footer .social-icons a {
     }
 }
 
-@media (max-width: 1530px) {
+@media (max-width: 1530px) {   /* media query za manje zaslone za usluge na indexu */
     .usluga {
         flex: 1 1 calc(33.33% - 20px); /* 3 slike u jednom redu */
         max-width: calc(33.33% - 20px);
     }
     .usluga-img {
-        width: 100%; /* Širina slike prilagođena širini roditeljskog elementa */
-        max-width: 300px; /* Maksimalna širina slike */
+        width: 100%;
+        max-width: 300px;
     }
     .logo img{
         width: 250px;
@@ -233,8 +231,8 @@ footer .social-icons a {
         max-width: calc(50% - 20px);
     }
     .usluga-img {
-        width: 100%; /* Širina slike prilagođena širini roditeljskog elementa */
-        max-width: 600px; /* Maksimalna širina slike */
+        width: 100%;
+        max-width: 600px;
     }
     .logo img{
         width: 200px;
@@ -248,8 +246,8 @@ footer .social-icons a {
         max-width: 100%;
     }
     .usluga-img {
-        width: 100%; /* Širina slike prilagođena širini roditeljskog elementa */
-        max-width: 400px; /* Maksimalna širina slike */
+        width: 100%;
+        max-width: 400px;
     }
     .logo img{
         width: 150px;
@@ -257,65 +255,65 @@ footer .social-icons a {
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1000px) {   /* media query za manje zaslone za recenzije */
     .recenzije-korisnika {
-        width: 80%; /* Širina prilagođena manjem ekranu */
-        padding: 20px; /* Smanjuje padding za manje ekrane */
+        width: 80%;
+        padding: 20px;
     }
     .text-page {
-        padding: 20px; /* Smanjuje padding za manje ekrane */
-        font-size: 1rem; /* Prilagođava veličinu fonta za manje ekrane */
-        max-width: 90%; /* Smanjuje maksimalnu širinu za manje ekrane */
+        padding: 20px;
+        font-size: 1rem;
+        max-width: 90%;
     }
     .prev, .next {
-        padding: 10px; /* Smanjuje padding za manje ekrane */
-        font-size: 1rem; /* Smanjuje veličinu fonta za manje ekrane */
+        padding: 10px;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 768px) {
     .recenzije-korisnika {
-        width: 90%; /* Širina prilagođena manjem ekranu */
-        padding: 10px; /* Smanjuje padding za manje ekrane */
+        width: 90%;
+        padding: 10px;
     }
     .text-page {
-        padding: 10px; /* Smanjuje padding za manje ekrane */
-        font-size: 0.7rem; /* Prilagođava veličinu fonta za manje ekrane */
-        max-width: 80%; /* Smanjuje maksimalnu širinu za manje ekrane */
+        padding: 10px;
+        font-size: 0.7rem;
+        max-width: 80%;
     }
     .prev, .next {
-        padding: 8px; /* Smanjuje padding za manje ekrane */
-        font-size: 0.8rem; /* Smanjuje veličinu fonta za manje ekrane */
+        padding: 8px;
+        font-size: 0.8rem;
     }
 }
 
 
+/* ------------------------------- USLUGE ------------------------------------ */
 
-/* USLUGE */
 
-.usluge-lista {
+.usluge-lista { /* postavljanje boxova za usluge */
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.usluga-usluga {
-    display: flex; /*tip boxa za sliku pored teksta */
+.usluga-usluga { /* namještanje boxa za usluge zasebno */
+    display: flex; /* tip boxa za sliku pored teksta */
     flex-direction: row; /*  podnaslov, paragraf i btn u redove */
-    align-items: center; /* Centrira sliku i tekst */
-    flex: 1 1 calc(40% - 20px); /* Osigurava da najviše 2 boxa idu u jedan red */
+    align-items: center; /* centrira sliku i tekst */
+    flex: 1 1 calc(40% - 20px); /* osigurava da najviše 2 boxa idu u jedan red */
     max-width: calc(50% - 20px); /* svaki box zauzima najviše pola stranice po širini kad su 2 u redu */
-    min-width: 200px; /* Minimalna širina boxa */
+    min-width: 200px;
     box-sizing: border-box; /* ponašanje širine i visine boxa */
     padding: 20px;
     margin: 10px;
     text-align: left;
-    background-color: azure; /* Bijela pozadina s prozirnošću */
-    border-radius: 10px; /* Zaobljeni rubovi */
-    box-shadow: 0 4px 8px grey; /* Dodaje sjenu iza boxa */
+    background-color: azure;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px grey;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1150px) { /* media query za manje zaslone za boxove usluga */
     .usluga-usluga {
         flex: 1 1 calc(50% - 20px); /* 2 boxa u jednom redu */
         max-width: calc(50% - 20px);
@@ -329,29 +327,29 @@ footer .social-icons a {
     }
 }
 
-.usluga-usluga-img {
-    width: 250px; /* Širina slike */
+.usluga-usluga-img { /* veličina slike u boxu */
+    width: 250px;
     height: auto;
-    margin-right: 20px; /* Razmak između slike i teksta */
+    margin-right: 20px; 
 }
 
-.usluga-usluga p {
+.usluga-usluga p { /* paragraf u boxu usluga */
     font-size: 1rem;
     color: navy;
 }
 
-.usluga-usluga h3{
+.usluga-usluga h3{ /* naslov u boxu usluga */
     margin: 10px 0;
     font-size: 1.5rem;
     color: royalblue;
 }
 
-.usluga-oblik-boxa {
+.usluga-oblik-boxa {  /* naslov, paragraf i btn u stupac */
     display: flex;
-    flex-direction: column; /* Postavlja naslov, paragraf i gumb u stupac */
+    flex-direction: column;
 }
 
-.btn {
+.btn { /* uređenje gumba za hipervezu u boxu */
     display: inline-block;
     margin-top: 10px;
     padding: 5px 10px;
@@ -363,11 +361,10 @@ footer .social-icons a {
     width: 90px;
 }
 
-.btn:hover {
+.btn:hover { /* potamni tipku kad se pređe mišem */
     background-color: darkblue;
 }
 
-/* Media query za manje ekrane */
 @media (max-width: 1050px) {
     .usluga-usluga {
         flex-direction: column; /* Slika, podnaslov, paragraf i btn prebacuje u stupac na manjim ekranima */
@@ -388,121 +385,120 @@ footer .social-icons a {
 }
 
 
-/* O NAMA */
+/* ------------------------------- O NAMA ------------------------------------ */
 
-#o-nama-opis {
+
+#o-nama-opis { /* sekcija za tekst i sliku o nama */
     display: flex;
-    flex-direction: column; /* Postavlja elemente sectiona u stupac */
-    align-items: center; /* Vertikalno centriranje elemenata */
-    justify-content: center; /* Razmak između elemenata */
+    flex-direction: column; /* elementi sekcije u stupcu */
+    align-items: center; /* vertikalno centriranje elemenata */
+    justify-content: center; /* razmak između elemenata */
     padding: 100px;
 }
 
-.o-nama-naslov {
+.o-nama-naslov { /* uređenje naslova o nama */
     font-size: 3rem;
     color: royalblue;
 }
 
-.o-nama-sadrzaj {
+.o-nama-sadrzaj { /* pozicija teksta o nama */
     display: flex;
     flex-direction: row; /* Postavlja tekst i sliku u red */
     align-items: center; /* Vertikalno centriranje elemenata */
 }
 
-.o-nama-tekst {
-    flex: 1; /* Omogućava tekstu da zauzme preostali prostor */
+.o-nama-tekst { /* izgled teksta o nama */
+    flex: 1;
     margin-right: 100px;
     font-size: 1.2rem;
     color: navy;
 }
 
-.o-nama-kolege {
-    width: 300px; /* Širina slike */
+.o-nama-kolege { /* slika kolegi */
+    width: 300px;
     height: auto;
     margin-right: 50px;
-    border-radius: 50px; /* Zaobljeni rubovi slike */
+    border-radius: 50px;
 }
 
-#o-nama-partneri {
+#o-nama-partneri { /* sekcija partneri */
     display: flex;
-    flex-direction: column; /* Postavlja elemente sectiona u stupac */
-    align-items: center; /* Vertikalno centriranje elemenata */
-    justify-content: center; /* Razmak između elemenata */
+    flex-direction: column; /* postavlja elemente sekcije u stupac */
+    align-items: center; /* vertikalno centriranje elemenata */
+    justify-content: center; /* razmak između elemenata */
     margin-left: 100px;
 }
 
-.o-nama-sadrzaj-partneri {
+.o-nama-sadrzaj-partneri { /* pozicija teksta partnera */
     display: flex;
-    flex-direction: column; /* Postavlja tekst i sliku u red */
-    align-items: center; /* Vertikalno centriranje elemenata */
+    flex-direction: column; /* tekst i slika u redu */
+    align-items: center;
 }
 
-.o-nama-partneri-slika{
-    width: 1500px; /* Širina slike */
+.o-nama-partneri-slika{ /* uređenje slike sa partnerima */
+    width: 1500px;
     height: auto;
-    align-items: center; /* Vertikalno centriranje elemenata */
+    align-items: center;
 }
 
-/* Media query za manje ekrane */
-
-@media (max-width: 1400px) {
+@media (max-width: 1400px) { /* media query za manje zaslone za sekciju o partnerima */
     #o-nama-partneri {
-        flex-direction: column; /* Postavlja elemente u stupac na manjim ekranima */
-        text-align: center; /* Centriranje teksta */
+        flex-direction: column; /* postavlja elemente u stupac */
+        text-align: center;
         margin-left: 0;
     }
     
     .o-nama-sadrzaj-partneri {
-        flex-direction: column; /* Postavlja tekst i sliku u stupac na manjim ekranima */
-        max-width: 600px; /* Maksimalna širina paragrafa */
-        padding: 0 20px; /* Dodaje padding s lijeve i desne strane */
+        flex-direction: column; /* postavlja tekst i sliku u stupac */
+        max-width: 600px; /* maks širina paragrafa */
+        padding: 0 20px;
     }
 
     .o-nama-partneri-slika {
-        width: 100%; /* Širina slike prilagođena širini ekrana */
+        width: 100%;
     }
 
     .o-nama-sadrzaj {
-        flex-direction: column; /* Postavlja tekst i sliku u stupac na manjim ekranima */
-        max-width: 600px; /* Maksimalna širina paragrafa */
-        padding: 0 20px; /* Dodaje padding s lijeve i desne strane */
+        flex-direction: column;
+        max-width: 600px;
+        padding: 0 20px;
     }
 }
 
 @media (max-width: 1000px) {
     #o-nama-opis {
-        flex-direction: column; /* Postavlja elemente u stupac na manjim ekranima */
-        text-align: center; /* Centriranje teksta */
+        flex-direction: column;
+        text-align: center;
     }
 
     .o-nama-sadrzaj {
-        flex-direction: column; /* Postavlja tekst i sliku u stupac na manjim ekranima */
-        align-items: center; /* Centriranje elemenata */
-        text-align: center; /* Centriranje teksta */
-        padding: 20px; /* Dodaje padding za manje ekrane */
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
     }
 
     .o-nama-tekst {
-        margin-right: 0; /* Uklanja razmak između teksta i slike */
-        margin-bottom: 20px; /* Dodaje razmak ispod teksta */
-        font-size: 1.5rem; /* Prilagođava veličinu fonta za manje ekrane */
-        text-align: center; /* Centriranje teksta */
+        margin-right: 0;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        text-align: center;
     }
 
     .o-nama-kolege {
-        width: 100%; /* Širina slike prilagođena širini ekrana */
-        max-width: 300px; /* Maksimalna širina slike */
-        margin-right: 0; /* Uklanja desni margin */
+        width: 100%;
+        max-width: 300px;
+        margin-right: 0;
     }
 }
 
 @media (max-width: 800px) {
     .o-nama-tekst {
-        font-size: 1.2rem; /* Prilagođava veličinu fonta za još manje ekrane */
+        font-size: 1.2rem;
     }
 
     .o-nama-sadrzaj {
-        padding: 10px; /* Smanjuje padding za još manje ekrane */
+        padding: 10px;
     }
 }
 
@@ -513,36 +509,36 @@ footer .social-icons a {
     }
 
     .o-nama-tekst {
-        font-size: 1rem; /* Zadržava veličinu fonta kao na većim ekranima */
+        font-size: 1rem;
         padding: 0;
-        text-align: center; /* Centriranje teksta */
+        text-align: center;
     }
 
     .o-nama-sadrzaj {
-        padding: 0px; /* Smanjuje padding za najmanje ekrane */
+        padding: 0px;
     }
 }
 
 
-/* KONTAKT */
+/* ------------------------------- KONTAKT ------------------------------------ */
 
 
-#kontaktirajte-nas {
+#kontaktirajte-nas {  /* sekcija za kontakt informacije */
     display: flex;
-    flex-direction: column; /* Postavlja elemente sectiona u stupac */
-    align-items: center; /* Vertikalno centriranje elemenata */
-    justify-content: center; /* Razmak između elemenata */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 100px;
 }
 
-.podrska-teta-slika{
-    width: 400px; /* Širina slike */
+.podrska-teta-slika{  /* slika tetke */
+    width: 400px;
     height: auto;
-    align-items: center; /* Vertikalno centriranje elemenata */
+    align-items: center;
     border-radius: 50px;
 }
 
-#karta-sekcija{
+#karta-sekcija{  /* oblik i veličine sekcije za kartu */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -551,193 +547,192 @@ footer .social-icons a {
     margin-bottom: 50px;
 }
 
-#karta{
+#karta{  /* veličine i okvir karte */
     width: 60%;
     height: 100%;
     border: 5px solid royalblue;
 }
 
-#javite-nam-se{
+#javite-nam-se{  /* sekcija za obrazce */
     display: flex;
-    flex-direction: column; /* Postavlja elemente sectiona u stupac */
-    align-items: center; /* Vertikalno centriranje elemenata */
-    justify-content: center; /* Razmak između elemenata */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 50px;
 }
 
-.javite-nam-se-naslov {
+.javite-nam-se-naslov {  /* uređenje naslova iznad obrazaca */
     font-size: 3rem;
     color: royalblue;
     margin-top: 0px;
     margin-bottom: 0px;
 }
 
-#obrazac {
+#obrazac {  /* postavljanje polja obrazaca */
     display: flex;
-    flex-direction: column; /* Postavlja elemente forme u stupac */
-    align-items: center; /* Vertikalno centriranje elemenata */
-    justify-content: center; /* Razmak između elemenata */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     margin-top: 50px;
     color: navy;
 }
 
-#obrazac label {
-    font-size: 1.4rem; /* Promjena veličine fonta za labele */
-    margin-bottom: 5px; /* Dodavanje razmaka ispod labela */
+#obrazac label {  /* izgled labele */
+    font-size: 1.4rem;
+    margin-bottom: 5px;
 }
 
 #obrazac input,
-#obrazac textarea {
-    width: 20%; /* Širina input i textarea elemenata */
-    padding: 10px; /* Dodavanje paddinga unutar input i textarea elemenata */
-    margin-bottom: 20px; /* Dodavanje razmaka ispod input i textarea elemenata */
-    border: 1px solid navy; /* Dodavanje obruba */
-    border-radius: 5px; /* Zaobljeni rubovi */
+#obrazac textarea {  /* postavke polja za unošenje podataka */
+    width: 20%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid navy;
+    border-radius: 5px;
 }
 
-#obrazac button {
-    padding: 10px 20px; /* Dodavanje paddinga unutar gumba */
-    background-color: royalblue; /* Boja pozadine gumba */
-    color: white; /* Boja teksta gumba */
-    border: none; /* Uklanjanje obruba */
-    border-radius: 5px; /* Zaobljeni rubovi */
-    cursor: pointer; /* Promjena kursora na pointer */
-    box-shadow: grey 0 4px 8px; /* Dodavanje sjene ispod gumba */
+#obrazac button {  /* tipka za poslati poruku */
+    padding: 10px 20px;
+    background-color: royalblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: grey 0 4px 8px;
 }
 
-#obrazac button:hover {
-    background-color: darkblue; /* Promjena boje pozadine gumba pri hoveru */
+#obrazac button:hover {  /* tamnija tipka kad se pređe mišem */
+    background-color: darkblue;
 }
 
-/* Media query za manje ekrane */
-@media (max-width: 1000px) {
+@media (max-width: 1000px) { /* media query za manje zaslone za cijelu stranicu kontakt */
     #kontaktirajte-nas {
-        padding: 50px; /* Smanjuje padding za manje ekrane */
+        padding: 50px;
     }
 
     .podrska-teta-slika {
-        width: 300px; /* Smanjuje širinu slike za manje ekrane */
+        width: 300px;
         height: auto;
     }
 
     #karta-sekcija {
-        height: 400px; /* Smanjuje visinu sekcije za manje ekrane */
+        height: 400px;
     }
 
     #karta {
-        width: 80%; /* Smanjuje širinu karte za manje ekrane */
+        width: 80%;
         height: 100%;
     }
 
     #javite-nam-se {
-        padding: 30px; /* Smanjuje padding za manje ekrane */
+        padding: 30px;
     }
 
     .javite-nam-se-naslov {
-        font-size: 2rem; /* Smanjuje veličinu fonta za manje ekrane */
+        font-size: 2rem;
     }
 
     #obrazac {
-        width: 30%; /* Povećava širinu forme za manje ekrane */
+        width: 30%;
     }
 
     #obrazac input,
     #obrazac textarea {
-        width: 80%; /* Povećava širinu input i textarea elemenata za manje ekrane */
+        width: 80%;
     }
 
     #obrazac label {
-        font-size: 1.2rem; /* Smanjuje veličinu fonta za labele */
+        font-size: 1.2rem;
     }
 }
 
 
 @media (max-width: 780px) {
     #kontaktirajte-nas {
-        padding: 30px; /* Smanjuje padding za još manje ekrane */
+        padding: 30px;
     }
 
     .podrska-teta-slika {
-        width: 250px; /* Smanjuje širinu slike za još manje ekrane */
+        width: 250px;
         height: auto;
     }
 
     #karta-sekcija {
-        height: 300px; /* Smanjuje visinu sekcije za još manje ekrane */
+        height: 300px;
     }
 
     #karta {
-        width: 90%; /* Povećava širinu karte za još manje ekrane */
+        width: 90%;
         height: 100%;
     }
 
     #javite-nam-se {
-        padding: 50px; /* Smanjuje padding za još manje ekrane */
+        padding: 50px;
     }
 
     .javite-nam-se-naslov {
-        font-size: 2.5rem; /* Smanjuje veličinu fonta za još manje ekrane */
+        font-size: 2.5rem;
     }
 
     #obrazac {
-        width: 40%; /* Povećava širinu forme za još manje ekrane */
+        width: 40%;
     }
 
     #obrazac input,
     #obrazac textarea {
-        width: 90%; /* Povećava širinu input i textarea elemenata za još manje ekrane */
+        width: 90%;
     }
 
     #obrazac label {
-        font-size: 1rem; /* Smanjuje veličinu fonta za labele */
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
     #kontaktirajte-nas {
-        padding: 20px; /* Smanjuje padding za najmanje ekrane */
+        padding: 20px;
     }
 
     .podrska-teta-slika {
-        width: 200px; /* Smanjuje širinu slike za najmanje ekrane */
+        width: 200px;
         height: auto;
     }
 
     #karta-sekcija {
-        height: 200px; /* Smanjuje visinu sekcije za najmanje ekrane */
+        height: 200px;
     }
 
     #karta {
-        width: 80%; /* Povećava širinu karte za najmanje ekrane */
+        width: 80%;
         height: 100%;
     }
 
     #javite-nam-se {
-        padding: 30px; /* Smanjuje padding za najmanje ekrane */
+        padding: 30px;
     }
 
     .javite-nam-se-naslov {
-        font-size: 2rem; /* Smanjuje veličinu fonta za najmanje ekrane */
+        font-size: 2rem;
     }
 
     #obrazac {
-        width: 100%; /* Povećava širinu forme za najmanje ekrane */
+        width: 100%;
     }
 
     #obrazac input,
     #obrazac textarea {
-        width: 30%; /* Povećava širinu input i textarea elemenata za najmanje ekrane */
+        width: 30%;
     }
 
     #obrazac label {
-        font-size: 0.8rem; /* Smanjuje veličinu fonta za labele */
+        font-size: 0.8rem;
     }
 }
 
-/* KARTICE ZA USLUGE */
+/* ------------------------------- STRANICE ZA USLUGE ------------------------------------ */
 
-.center-text-usluga {
+.center-text-usluga {  /* naslov za uslugu */
     text-align: center;
     color: royalblue;
     text-shadow: 1px 1px 1px darkgrey;
@@ -746,20 +741,20 @@ footer .social-icons a {
     margin-bottom: 0px;
 }
 
-.usluge-lista-posebno {
+.usluge-lista-posebno { /* tekst opisa za uslugu */
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
     flex-wrap: wrap;
 }
 
-.opis-usluge {
-    display: flex; /*tip boxa za sliku pored teksta */
-    flex-direction: row-reverse; /*  podnaslov, paragraf i btn u redove */
-    align-items: flex-start; /* Centrira sliku i tekst */
-    max-width: calc(90% - 20px); /* svaki box zauzima najviše pola stranice po širini kad su 2 u redu */
-    min-width: 200px; /* Minimalna širina boxa */
-    box-sizing: border-box; /* ponašanje širine i visine boxa */
+.opis-usluge { /* box za opis usluge */
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    max-width: calc(90% - 20px);
+    min-width: 200px;
+    box-sizing: border-box;
     padding: 20px;
     margin: 0 auto;
     text-align: left;
@@ -767,16 +762,16 @@ footer .social-icons a {
     font-size: 1.4rem;
 }
 
-.slika-usluge{
-    width: 300px; /* Širina slike */
+.slika-usluge{ /* slika usluge */
+    width: 300px;
     height: auto;
 }
 
-.razmak-paragrafa{
+.razmak-paragrafa{ /* razmak paragrafa u opisu usluge */
     margin-bottom: 70px;
 }
 
-.btn-sidra{
+.btn-sidra{ /* tipka za sidra */
     display: inline-block;
     margin-top: 10px;
     padding: 5px 10px;
@@ -792,7 +787,7 @@ footer .social-icons a {
     background-color: darkblue;
 }
 
-.sidro {
+.sidro { /* sekcija za sidra */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -800,11 +795,11 @@ footer .social-icons a {
     margin-bottom: 20px;
 }
 
-.sidro-opis {
+.sidro-opis { /* opis boxa za stavku usluge */
     display: flex;
-    flex-direction: column; /*  podnaslov i paragraf u redove */
-    min-width: 200px; /* Minimalna širina boxa */
-    box-sizing: border-box; /* ponašanje širine i visine boxa */
+    flex-direction: column;
+    min-width: 200px;
+    box-sizing: border-box;
     padding: 30px;
     margin: 20px;
     max-width: 80%;
@@ -813,33 +808,32 @@ footer .social-icons a {
     color: white;
     font-style: bold;
     font-size: 1.2rem;
-    border-radius: 20px; /* Zaobljeni rubovi */
-    box-shadow: 0 4px 8px grey; /* Dodaje sjenu iza boxa */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px grey;
 }
 
-.tablica td {
+.tablica td { /* uređena tablica da se ubaci natuknica */
     position: relative;
-    padding-left: 15px; /* Razmak za natuknicu */
-    width: 50%; /* Širina ćelije */
+    padding-left: 15px;
+    width: 50%;
 }
 
-.tablica td::before {
-    content: "•"; /* Natuknica u obliku točke */
+.tablica td::before { /* uređenje natuknice u tablici */
+    content: "•";
     position: absolute;
-    left: 0; /* Poravnanje natuknice s lijeve strane */
-    color: white; /* Boja natuknice */
-    font-size: 1.3rem; /* Veličina natuknice */
-    line-height: 1; /* Visina linije */
+    left: 0;
+    color: white;
+    font-size: 1.3rem;
+    line-height: 1;
 }
 
-/* Media query */
-@media (max-width: 1000px) {
+@media (max-width: 1000px) { /* media query za manje zaslone za usluge */
     .opis-usluge {
-        flex-direction: column; /* Postavlja elemente u stupac na manjim ekranima */
-        text-align: center; /* Centriranje teksta */
+        flex-direction: column;
+        text-align: center;
     }
     .slika-usluge{
-        max-width: 300px; /* Maksimalna širina slike */
+        max-width: 300px;
         margin: 0 auto;
         display: block;
     }
@@ -847,34 +841,34 @@ footer .social-icons a {
 
 @media (max-width: 1000px) {
     .sidro {
-        flex-direction: column; /* Postavlja elemente u stupac na manjim ekranima */
-        padding: 20px; /* Dodaje padding za manje ekrane */
+        flex-direction: column;
+        padding: 20px;
     }
     .sidro-opis {
-        max-width: 90%; /* Smanjuje maksimalnu širinu za manje ekrane */
-        padding: 20px; /* Smanjuje padding za manje ekrane */
-        font-size: 1rem; /* Prilagođava veličinu fonta za manje ekrane */
+        max-width: 90%;
+        padding: 20px;
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 800px) {
     .sidro {
-        padding: 10px; /* Smanjuje padding za još manje ekrane */
+        padding: 10px;
     }
     .sidro-opis {
-        max-width: 100%; /* Smanjuje maksimalnu širinu za još manje ekrane */
-        padding: 10px; /* Smanjuje padding za još manje ekrane */
-        font-size: 0.9rem; /* Prilagođava veličinu fonta za još manje ekrane */
+        max-width: 100%;
+        padding: 10px;
+        font-size: 0.9rem;
     }
 }
 
 @media (max-width: 500px) {
     .sidro {
-        padding: 5px; /* Smanjuje padding za najmanje ekrane */
+        padding: 5px;
     }
     .sidro-opis {
-        max-width: 100%; /* Smanjuje maksimalnu širinu za najmanje ekrane */
-        padding: 5px; /* Smanjuje padding za najmanje ekrane */
-        font-size: 0.8rem; /* Prilagođava veličinu fonta za najmanje ekrane */
+        max-width: 100%;
+        padding: 5px;
+        font-size: 0.8rem;
     }
 }
