@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showPage(currentPage);
     }
 
-    document.querySelector('.prev').addEventListener('click', () => changePage(-1));
+    document.querySelector('.prev').addEventListener('click', () => changePage(-1)); /* strelice za listanje recenzija korisnika */
     document.querySelector('.next').addEventListener('click', () => changePage(1));
 
     showPage(currentPage);
