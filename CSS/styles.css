@@ -317,6 +317,9 @@ footer .social-icons a {
     .usluga-usluga {
         flex: 1 1 calc(50% - 20px); /* 2 boxa u jednom redu */
         max-width: calc(50% - 20px);
+        flex-direction: column; /* Slika, podnaslov, paragraf i btn prebacuje u stupac na manjim ekranima */
+        align-items: center;
+        text-align: center; /* Centriranje teksta */
     }
 }
 
@@ -330,7 +333,7 @@ footer .social-icons a {
 .usluga-usluga-img { /* veličina slike u boxu */
     width: 250px;
     height: auto;
-    margin-right: 20px; 
+    margin-bottom: 10px; /* Dodaje razmak ispod slike */
 }
 
 .usluga-usluga p { /* paragraf u boxu usluga */
@@ -363,25 +366,6 @@ footer .social-icons a {
 
 .btn:hover { /* potamni tipku kad se pređe mišem */
     background-color: darkblue;
-}
-
-@media (max-width: 1050px) {
-    .usluga-usluga {
-        flex-direction: column; /* Slika, podnaslov, paragraf i btn prebacuje u stupac na manjim ekranima */
-        align-items: center;
-        text-align: center; /* Centriranje teksta */
-    }
-
-    .usluga-usluga-img {
-        margin-right: 0; /* Uklanja razmak između slike i teksta */
-        margin-bottom: 10px; /* Dodaje razmak ispod slike */
-    }
-}
-@media (max-width: 650px) {
-    .usluga-usluga {
-        flex: 1 1 100%; /* 1 box u jednom redu */
-        max-width: 100%;
-    }
 }
 
 
@@ -426,7 +410,8 @@ footer .social-icons a {
     flex-direction: column; /* postavlja elemente sekcije u stupac */
     align-items: center; /* vertikalno centriranje elemenata */
     justify-content: center; /* razmak između elemenata */
-    margin-left: 100px;
+    padding: 100px;
+
 }
 
 .o-nama-sadrzaj-partneri { /* pozicija teksta partnera */
@@ -436,12 +421,41 @@ footer .social-icons a {
 }
 
 .o-nama-partneri-slika{ /* uređenje slike sa partnerima */
-    width: 1500px;
+    width: 1300px;
     height: auto;
     align-items: center;
 }
 
-@media (max-width: 1400px) { /* media query za manje zaslone za sekciju o partnerima */
+
+    
+
+@media (max-width: 1400px) {
+    #o-nama-opis {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .o-nama-sadrzaj {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 600px;
+        padding: 0 20px;
+    }
+
+    .o-nama-tekst {
+        margin-right: 0;
+        margin-bottom: 20px;
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .o-nama-kolege {
+        width: 100%;
+        max-width: 300px;
+        margin-right: 0;
+    }
+
     #o-nama-partneri {
         flex-direction: column; /* postavlja elemente u stupac */
         text-align: center;
@@ -458,64 +472,63 @@ footer .social-icons a {
         width: 100%;
     }
 
-    .o-nama-sadrzaj {
-        flex-direction: column;
-        max-width: 600px;
-        padding: 0 20px;
-    }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
+
     #o-nama-opis {
         flex-direction: column;
         text-align: center;
     }
 
     .o-nama-sadrzaj {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .o-nama-tekst {
-        margin-right: 0;
-        margin-bottom: 20px;
-        font-size: 1.5rem;
-        text-align: center;
-    }
-
-    .o-nama-kolege {
         width: 100%;
-        max-width: 300px;
-        margin-right: 0;
     }
-}
 
-@media (max-width: 800px) {
+    .o-nama-sadrzaj-partneri{
+        max-width: 100%;
+    }
+
+    .o-nama-partneri-slika {
+        width: 100%;
+    }
+
     .o-nama-tekst {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
-    .o-nama-sadrzaj {
-        padding: 10px;
+    .o-nama-naslov{
+        font-size: 2.5rem;
     }
+
+
 }
 
 @media (max-width: 500px) {
 
-    .o-nama-naslov{
-        font-size: 2rem;
-    }
-
-    .o-nama-tekst {
-        font-size: 1rem;
-        padding: 0;
+    #o-nama-opis {
+        flex-direction: column;
         text-align: center;
     }
 
     .o-nama-sadrzaj {
-        padding: 0px;
+        width: 100%;
+    }
+
+    .o-nama-sadrzaj-partneri{
+        max-width: 100%;
+    }
+
+    .o-nama-partneri-slika {
+        width: 100%;
+    }
+
+    .o-nama-tekst {
+        font-size: 1.1rem;
+    }
+
+    .o-nama-naslov{
+        font-size: 1.8rem;
     }
 }
 
@@ -730,7 +743,9 @@ footer .social-icons a {
     }
 }
 
+
 /* ------------------------------- STRANICE ZA USLUGE ------------------------------------ */
+
 
 .center-text-usluga {  /* naslov za uslugu */
     text-align: center;
@@ -837,9 +852,7 @@ footer .social-icons a {
         margin: 0 auto;
         display: block;
     }
-}
 
-@media (max-width: 1000px) {
     .sidro {
         flex-direction: column;
         padding: 20px;
@@ -853,22 +866,22 @@ footer .social-icons a {
 
 @media (max-width: 800px) {
     .sidro {
-        padding: 10px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
     }
     .sidro-opis {
-        max-width: 100%;
-        padding: 10px;
-        font-size: 0.9rem;
+        font-size: 1.1rem;
     }
 }
 
 @media (max-width: 500px) {
     .sidro {
-        padding: 5px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
     }
     .sidro-opis {
-        max-width: 100%;
-        padding: 5px;
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 }
